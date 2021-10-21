@@ -10,12 +10,12 @@ export class InMemoryDataService implements InMemoryDbService {
     const heroes = [
       { id: 0, name: 'Lazarus "Cap Hunter" Wright', age: 26 },
       { id: 1, name: 'Mr. Aieth Yeti', age: 34 },
-      { id: 2, name: 'Beam', age: 36 },
-      { id: 3, name: 'Iavel Aranea ', age: 38 },
-      { id: 4, name: "John's Defender", age: 27 },
-      { id: 5, name: 'Walther von Brügge', age: 32 },
+      { id: 2, name: 'Beam', age:  36},
+      { id: 3, name: 'Iavel Aranea ', age:  38},
+      { id: 4, name: 'John\'s Defender', age: 27},
+      { id: 5, name: 'Walther von Brügge', age: 32 }
     ];
-    return { heroes };
+    return {heroes};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
@@ -24,8 +24,6 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
   genId(heroes: Hero[]): number {
-    return heroes.length > 0
-      ? Math.max(...heroes.map((hero) => hero.id)) + 1
-      : 11;
+    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
   }
 }
